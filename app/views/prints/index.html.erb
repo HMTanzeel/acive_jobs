@@ -1,2 +1,9 @@
-<h1>Prints#index</h1>
-<p><%= @hello_message %></p>
+<h1><%= @hello_message %></h1>
+<ol>
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.title, book %><br/>
+      <%= book.price %><br/>
+    </li>
+    <% end %>
+</ol>

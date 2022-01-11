@@ -1,0 +1,16 @@
+<h1><%= @hello_message %></h1>
+<ol>
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.title, book %>
+      by: <%= book.author %><br/>
+      <%= book.price %><br/>
+      <%= link_to "Edit", edit_book_path(book) %><br/>
+      <%= link_to "Destroy", book_path(book), data: {turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?"} %>
+    </li>
+    <br/><br/>
+    <% end %>
+</ol>
+
+<%= link_to "New Book", new_book_path %>
