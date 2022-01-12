@@ -2,6 +2,9 @@ class BooksController < ApplicationController
   def index
     @hello_message = "List of Books"
     @books = Book.all
+    # @books.each do |author|
+    #   author = Author.where(:id => @books.author_id).first
+    # end
   end
 
   def show
@@ -45,6 +48,7 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:title, :price, :prints, :author)
+      params.require(:book).permit(:title, :price, :prints, :author_id)
+      # params.require(book: :author).permit(:name)
     end
 end

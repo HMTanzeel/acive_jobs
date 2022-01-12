@@ -1,0 +1,3 @@
+OrderMailer.with(tanzeel: "Tanzeel").new_order_email
+
+params[:tanzeel]

@@ -1,0 +1,17 @@
+<h1><%= @author_message %></h1>
+<ol>
+  <% @authors.each do |author| %>
+    <li>
+      <%= link_to author.name, author %>
+      <h5>Email: <%= author.email %></h5><br/>
+      <%= link_to "Edit", edit_author_path(author) %><br/>
+      <%= link_to "Destroy", author_path(author), data: {turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?"} %>
+    </li>
+    <br/><br/>
+    <% end %>
+</ol>
+
+<%= link_to "New Author", new_author_path %>
+<br/>
+<%= link_to "Return to Books", root_path() %>

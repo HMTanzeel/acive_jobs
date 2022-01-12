@@ -1,5 +1,5 @@
 <h1><%= @book.title %></h1>
-<h4>by: <%= @book.name %></h4>
+<h4>by: <%= @book.author.name %></h4>
 
 <h5>Price: <%= @book.price %></h5>
 
@@ -12,3 +12,5 @@
                                                 turbo_confirm: "Are you sure?"} %>
   </li>
 </ul>
+
+<%= link_to "Return to Book", root_path() %>

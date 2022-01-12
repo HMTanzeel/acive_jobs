@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Your book <%= @book.title %> has been deleted successfully!</p>
+    <p>
+    Book details<br>
+    --------------------------
+    </p>
+    <p>Name: <%= @book.title %></p>
+    <p>Price: <%= @book.price %></p>
+    <p>Author: <%= @book.author.name %></p>
+    <p>
+    Prints:<br>
+    ----------
+    </p>
+    <p><%= @book.prints %></p>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+  <h1><%= @author.name %></h1>
+  <h5>Email: <%= @author.email %></h5>
+
+  <table>
+    <tr>
+      <th>Author of these Books</th>
+    <%# </tr> %>
+    <%# <% @author.each do |tbooks| %>
+      <%# <tr> %>
+        <%# <td><%= tbooks.books.title %></td>
+      <%# </tr> %>
+    <%# <% end %>
+  </table>
+
+  <ul>
+    <li><%= link_to "Edit", edit_author_path(@author) %></li>
+    <li>
+      <%= link_to "Destroy", author_path(@author), data: {turbo_method: :delete,
+                                                  turbo_confirm: "Are you sure?"} %>
+    </li>
+  </ul>
+
+  <%= link_to "Return Authors", authors_index_path() %>
