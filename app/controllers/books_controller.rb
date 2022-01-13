@@ -41,16 +41,25 @@ class BooksController < ApplicationController
 
   def destroy
     @book = Book.find(params[:id])
-
+    
     book_title = @book.title
-    author = @book.author
+    author = @book.author.name
+    email = @book.author.email
     book_price = @book.price
     book_prints = @book.prints
 
-    if @book.destroy
-      DeleteMailer.with(book: book_title, author: author, price: book_price, prints: book_prints).delete_book_email.deliver_later
+    destroy = @book.destroy
+
+    if destroy
+      DeleteMailer.with(book_title: book_title, author: author, price: book_price,
+        prints: book_prints, mail: email).delete_book_email.deliver_later
+
       flash[:success] = "Book successfully deleted."
       redirect_to root_path, status: :see_other
+    else
+      flash.now[:error] = "Error: Please! try again."
+    end
+
   end
 
   private

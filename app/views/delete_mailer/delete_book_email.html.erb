@@ -4,18 +4,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>Your book <%= @book.title %> has been deleted successfully!</p>
+    <p>Your book <%= @book_title %> has been deleted successfully!</p>
     <p>
     Book details<br>
     --------------------------
     </p>
-    <p>Name: <%= book_title %></p>
-    <p>Price: <%= book_price %></p>
-    <p>Author: <%= @author.name %></p>
+    <p>Name: <%= @book_title %></p>
+    <p>Price: <%= @price %></p>
+    <p>Author: <%= @author %></p>
     <p>
     Prints:<br>
     ----------
     </p>
-    <p><%= book_prints %></p>
+    <p><%= @prints %></p>
   </body>
 </html>
