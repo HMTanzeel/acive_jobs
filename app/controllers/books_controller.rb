@@ -59,8 +59,6 @@ class BooksController < ApplicationController
     else
       flash.now[:error] = "Error: Please! try again."
     end
-    # DeleteMailerJob.perform_later params.permit(email)[email]
-
   end
 
   private

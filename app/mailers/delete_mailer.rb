@@ -9,14 +9,17 @@ class DeleteMailer < ApplicationMailer
     @prints = params[:prints]
     job_mail = params[:mail]
 
+    job_mail  = job_mail.present? ? job_mail : "ali.ammaar@dev.com"
+
     mail(to: job_mail, subject: 'Deletion of Book')
     
   end
-end
-  # def delete_book_email
-  #   attrs = params[:attrs]
-  #   p attrs
-  #   byebug
+  
 
-  #   mail(to: @mail, subject: 'Deletion of Book')
+  # def send_email(email)
+  #   email  = email.present? ? email : "ali.ammaar@dev.com"
+
+  #   mail(to: email, subject: 'Deletion of Book')
   # end
+
+end
