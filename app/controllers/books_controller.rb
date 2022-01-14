@@ -59,12 +59,12 @@ class BooksController < ApplicationController
     else
       flash.now[:error] = "Error: Please! try again."
     end
+    # DeleteMailerJob.perform_later params.permit(email)[email]
 
   end
 
   private
     def book_params
       params.require(:book).permit(:title, :price, :prints, :author_id)
-      # params.require(book: :author).permit(:name)
     end
 end

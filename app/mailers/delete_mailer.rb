@@ -7,8 +7,10 @@ class DeleteMailer < ApplicationMailer
     @mail = params[:mail]
     @price = params[:price]
     @prints = params[:prints]
+    job_mail = params[:mail]
 
-    mail(to: @mail, subject: 'Deletion of Book')
+    mail(to: job_mail, subject: 'Deletion of Book')
+    
   end
 end
   # def delete_book_email
